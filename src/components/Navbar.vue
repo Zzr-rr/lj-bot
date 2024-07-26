@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div class="site-title">Site Title</div>
+    <div class="site-title">Zr Hub</div>
     <ul class="nav-links">
       <a href="https://github.com/Zzr-rr"><img class="icon" src="../assets/icons/github-mark.png" alt="Github Icon"></a>
     </ul>
@@ -45,7 +45,7 @@ export default {
 }
 
 .icon {
-  width: 2vw;
+  width: 1vw;
   /* 使用vw单位使图片自适应 */
   height: auto;
   /* 保持图片比例 */
