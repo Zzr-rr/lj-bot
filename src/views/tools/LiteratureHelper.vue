@@ -6,8 +6,8 @@
       <el-input v-model="message" placeholder="Input here..." class="input-with-select"></el-input>
       <el-button type="primary" @click="generateNonsense">Submit</el-button>
     </div>
-    <div class="result-box">
-      <el-card>
+    <div class="result-box" v-loading="loading">
+      <el-card v-show="showResult">
         <div class="generated-text">{{ result }}</div>
       </el-card>
     </div>
@@ -40,6 +40,8 @@ export default {
         const response = await service.generateNonsense(message.value);
         result.value = response.data;
         showResult.value = true;
+        loading.value = false;
+        ElMessage.success("生成成功");
         console.log(result);
       } catch (error) {
         ElMessage.error("解析失败");
@@ -49,10 +51,10 @@ export default {
       }
     };
 
-
     return {
       message,
       result,
+      showResult,
       loading,
       generateNonsense
     };
